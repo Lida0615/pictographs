@@ -1,0 +1,29 @@
+@import "./fonts.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Muller";
+  background: #1d2648;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+input,
+input::placeholder {
+  font-family: "Muller";
+}
+input,
+button {
+  border: 0;
+  outline: 0;
+}
+.container {
+  max-width: 1133px;
+  width: 100%;
+  margin: 0 auto;
+}
