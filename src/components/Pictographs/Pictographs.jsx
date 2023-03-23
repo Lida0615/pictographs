@@ -9,6 +9,7 @@ import Twitter from "../../assets/svg/twitter.svg";
 import Reddit from "../../assets/svg/reddit.svg";
 import Arrow from "../../assets/svg/Arrow.svg";
 import { Link } from "react-router-dom";
+
 const Pictographs = () => {
   return (
     <div className="pictographs">

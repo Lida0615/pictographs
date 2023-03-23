@@ -1,17 +1,32 @@
 import "./header.scss";
-import Logo from "../../assets/svg/logo.svg";
-import Apple from "../../assets/svg/apple.svg";
-import GooglePl from "../../assets/svg/google-play.svg";
+
+import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { Apple, GooglePlay, Logo } from "../../assets";
+import { clickDropDown } from "../../helpers/clickDropDown";
+import { languageElements, navLinks } from "../../utils/const";
+
 const Header = () => {
-  const menu = () => {
-    document.querySelector(".header").classList.toggle("toggle");
-    document.querySelector("body").classList.toggle("shadow");
+  const toggleRef = useRef(null);
+  const contentRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { t, i18n } = useTranslation();
+
+  clickDropDown(toggleRef, contentRef);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const onOpen = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
     <>
-      <header className="header">
+      <header className={`header ${isOpen ? "toggle" : ""}`}>
         <div className="logo">
           <div className="logo_text">PICTOGRAPHS</div>
           <div className="logo_img">
@@ -20,36 +35,25 @@ const Header = () => {
         </div>
         <nav className="header_nav">
           <ul className="header_nav__menu">
-            <li>
-              <Link to="/">Project</Link>
-            </li>
-            <li>
-              <Link to="/">Marketplace</Link>
-            </li>
-            <li>
-              <Link to="/">Buy $PICT</Link>
-            </li>
-            <li>
-              <Link to="/">White Paper</Link>
-            </li>
-            <li>
-              <Link to="/">FAQ</Link>
-            </li>
-            <li>
-              <Link to="/">Contact Us</Link>
-            </li>
-            <li>
-              <Link to="/" className="language">
+            {navLinks.map((item) => (
+              <li key={item.id}>
+                <Link className="header_nav__link" to={item.to}>
+                  {t(item.label)}
+                </Link>
+              </li>
+            ))}
+
+            <li className="dropDown">
+              <div className="header_nav__link" ref={toggleRef}>
                 Language
-                <ul className="language_list">
-                  <li>
-                    <Link to="/">English</Link>
+              </div>
+              <ul className="dropDown_list" ref={contentRef}>
+                {languageElements.map((item) => (
+                  <li key={item.id} onClick={() => changeLanguage(item.lng)}>
+                    <button>{item.label}</button>
                   </li>
-                  <li>
-                    <Link to="/">Русский</Link>
-                  </li>
-                </ul>
-              </Link>
+                ))}
+              </ul>
             </li>
             <li>
               <Link to="/">Download</Link>
@@ -63,13 +67,13 @@ const Header = () => {
             </li>
             <li>
               <Link to="/">
-                <img src={GooglePl} alt="" />
+                <img src={GooglePlay} alt="" />
               </Link>
             </li>
           </ul>
         </nav>
       </header>
-      <div onClick={menu} className="burger">
+      <div className={`burger ${isOpen ? "toggle" : ""}`} onClick={onOpen}>
         <span></span>
         <span></span>
         <span></span>
