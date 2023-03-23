@@ -1,0 +1,42 @@
+.project {
+  margin-top: 280px;
+  background: #263367;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  &_img:nth-child(1) img {
+    margin-bottom: -33px;
+  }
+  &_img:nth-child(2) {
+    margin-top: -33px;
+  }
+  &_data {
+    h3 {
+      padding-top: 65px;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 90%;
+
+      letter-spacing: -0.045em;
+    }
+    h2 {
+      margin-top: 32px;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 90%;
+      /* identical to box height, or 36px */
+
+      letter-spacing: -0.045em;
+    }
+    p {
+      margin-top: 14px;
+      width: 366px;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 100%;
+      /* or 20px */
+
+      letter-spacing: -0.045em;
+    }
+  }
+}

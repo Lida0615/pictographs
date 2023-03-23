@@ -1,0 +1,138 @@
+.download {
+  background: url("../../assets/brand/download.png") no-repeat center center;
+  display: flex;
+  gap: 200px;
+  margin-top: 166px;
+
+  &_data {
+    margin-left: 67px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      font-weight: 700;
+      font-size: 65px;
+      line-height: 90%;
+
+      letter-spacing: -0.045em;
+    }
+    & > span {
+      margin-top: 17px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 90%;
+    }
+    &__apps {
+      margin-top: 58px;
+      display: flex;
+
+      gap: 32px;
+      a {
+        padding: 13px 33px 17px 18px;
+        display: flex;
+        align-items: center;
+        background: #1d2648;
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+        width: 187px;
+        gap: 8px;
+        div {
+          display: flex;
+          flex-direction: column;
+          span:nth-child(1) {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 90%;
+
+            letter-spacing: -0.045em;
+          }
+          span:nth-child(2) {
+            font-weight: 400;
+            font-size: 23px;
+            line-height: 90%;
+
+            letter-spacing: -0.045em;
+          }
+        }
+      }
+      a:nth-child(2) {
+        padding: 12px 14px 17px 18px;
+      }
+    }
+  }
+  &_pic {
+    img:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .download {
+    padding-left: 41px;
+    padding-right: 41px;
+    justify-content: space-between;
+    gap: 0px;
+    &_data {
+      margin-left: 0;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .download {
+    padding: 32px;
+    margin: 0 auto;
+    background: url("../../assets/brand/downloud-bg.png") no-repeat;
+    background-position: 50% center;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 40px;
+    &_pic {
+      img:nth-child(1) {
+        display: none;
+      }
+      img:nth-child(2) {
+        display: block;
+        margin-top: -6px;
+      }
+    }
+
+    &_data {
+      h2 {
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 25px;
+      }
+      span {
+        margin-top: 3px;
+        font-weight: 400;
+        font-size: 13px;
+      }
+      &__apps {
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 13px;
+        a {
+          padding: 6px 6px 10px 12px;
+
+          width: 121px;
+          gap: 7px;
+          div {
+            span:nth-child(1) {
+              font-weight: 400;
+              font-size: 8px;
+            }
+
+            span:nth-child(2) {
+              font-weight: 400;
+              font-size: 13px;
+            }
+          }
+        }
+        a:nth-child(2) {
+          padding: 6px 6px 10px 12px;
+        }
+      }
+    }
+  }
+}

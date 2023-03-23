@@ -12,6 +12,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 input,
 input::placeholder {
@@ -21,6 +22,10 @@ input,
 button {
   border: 0;
   outline: 0;
+}
+ul,
+ol {
+  list-style: none;
 }
 .container {
   max-width: 1133px;

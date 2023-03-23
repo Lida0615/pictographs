@@ -1,0 +1,106 @@
+.partners {
+  margin-top: 130px;
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 90%;
+    letter-spacing: -0.045em;
+  }
+  &__list {
+    max-width: 1007px;
+    margin: 0 auto;
+    margin-top: 88px;
+    display: flex;
+    gap: 82px;
+    justify-content: space-between;
+  }
+  &__item {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    &__text {
+      display: flex;
+      flex-direction: column;
+      &-small {
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 90%;
+
+        text-align: center;
+        letter-spacing: -0.045em;
+      }
+      &-big {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 90%;
+        /* or 43px */
+
+        text-align: center;
+        letter-spacing: -0.045em;
+      }
+    }
+  }
+  &__item:nth-child(3) {
+    .partners__item__text-big {
+      font-size: 55px;
+    }
+  }
+
+  &_how {
+    // max-width: 1104px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 113px;
+    background: url("../../assets/brand/how-to-pic.png") no-repeat center;
+    background-size: cover;
+    height: 484px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 108px;
+    padding-right: 68px;
+    &__text {
+      h3 {
+        margin-top: 90px;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 90%;
+        /* identical to box height, or 45px */
+
+        letter-spacing: -0.045em;
+      }
+      p {
+        margin-top: 31px;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 100%;
+        width: 488px;
+        /* or 22px */
+
+        letter-spacing: -0.045em;
+
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    &__photo {
+      margin-top: 107px;
+    }
+  }
+  &_btn {
+    margin-top: 20px;
+    background: #1d2648;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    padding: 10px 41px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    width: 167px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 90%;
+    /* or 18px */
+
+    letter-spacing: -0.045em;
+  }
+}
